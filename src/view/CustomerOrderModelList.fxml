@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1100.0" style="-fx-background-color: #141b20;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerOrderModelListController">
+   <children>
+      <Button fx:id="closeButton" layoutX="1009.0" layoutY="14.0" mnemonicParsing="false" onAction="#ExitWindow" text="X" textFill="#c3c6ce">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+      </Button>
+      <Text fill="#c3c6ce" layoutX="48.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Model List" wrappingWidth="353.6845703125">
+         <font>
+            <Font name="SansSerif Bold" size="30.0" />
+         </font>
+      </Text>
+      <TableView fx:id="itemTable" layoutX="51.0" layoutY="53.0" prefHeight="683.0" prefWidth="987.0">
+        <columns>
+          <TableColumn fx:id="modelName" prefWidth="347.9999694824219" text="Model Name" />
+          <TableColumn fx:id="category" minWidth="0.0" prefWidth="163.0" text="Category" />
+            <TableColumn fx:id="unitPrice" prefWidth="137.0" text="Unit Price" />
+            <TableColumn fx:id="sellingPrice" prefWidth="134.0" text="Selling Price" />
+            <TableColumn fx:id="quantity" prefWidth="81.0" text="Quantity" />
+            <TableColumn fx:id="warrentyYears" prefWidth="123.0" text="Warrenty Years" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

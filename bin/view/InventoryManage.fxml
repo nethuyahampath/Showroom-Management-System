@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InventoryController">
+   <children>
+      <AnchorPane layoutX="300.0" prefHeight="1080.0" prefWidth="1620.0" style="-fx-background-color: #edf1f2;">
+         <children>
+            <Pane prefHeight="100.0" prefWidth="1066.0" />
+            <AnchorPane layoutX="10.0" layoutY="168.0" prefHeight="855.0" prefWidth="1603.0">
+               <children>
+                  <Label layoutX="29.0" layoutY="39.0" text="Category">
+                     <font>
+                        <Font name="SansSerif Bold" size="16.0" />
+                     </font></Label>
+                  <Label layoutX="29.0" layoutY="164.0" text="Supplier">
+                     <font>
+                        <Font name="SansSerif Bold" size="16.0" />
+                     </font></Label>
+                  <Label layoutX="29.0" layoutY="252.0" text="Model Name">
+                     <font>
+                        <Font name="SansSerif Bold" size="16.0" />
+                     </font></Label>
+                  <Label layoutX="32.0" layoutY="317.0" text="Unit Price">
+                     <font>
+                        <Font name="SansSerif Bold" size="16.0" />
+                     </font></Label>
+                  <Label layoutX="32.0" layoutY="392.0" text="Selling Price">
+                     <font>
+                        <Font name="SansSerif Bold" size="16.0" />
+                     </font></Label>
+                  <Label layoutX="35.0" layoutY="460.0" text="Quantity">
+                     <font>
+                        <Font name="SansSerif Bold" size="16.0" />
+                     </font></Label>
+                  <Label layoutX="32.0" layoutY="535.0" text="Waranty">
+                     <font>
+                        <Font name="SansSerif Bold" size="16.0" />
+                     </font></Label>
+                  <JFXComboBox fx:id="cmbCategory" labelFloat="true" layoutX="137.0" layoutY="31.0" prefHeight="31.0" prefWidth="234.0" promptText="Select" unFocusColor="#a19c9c" />
+                  <JFXComboBox fx:id="cmbSupplier" labelFloat="true" layoutX="137.0" layoutY="158.0" prefHeight="31.0" prefWidth="234.0" promptText="Select" unFocusColor="#a19c9c" />
+                  <TextField fx:id="txtbModel" layoutX="140.0" layoutY="247.0" prefHeight="31.0" prefWidth="234.0" />
+                  <TextField fx:id="txtbUnitPrice" layoutX="141.0" layoutY="312.0" prefHeight="31.0" prefWidth="180.0" />
+                  <TextField fx:id="txtbSellingPrice" layoutX="141.0" layoutY="387.0" prefHeight="31.0" prefWidth="180.0" />
+                  <TextField fx:id="txtbQuantity" layoutX="141.0" layoutY="455.0" prefHeight="31.0" prefWidth="180.0" />
+                  <JFXButton fx:id="btnAddModel" layoutX="140.0" layoutY="607.0" onAction="#modelAdd" prefHeight="40.0" prefWidth="104.0" style="-fx-background-color: #3a434b;" text="+Add" textFill="#c3c6ce">
+                     <font>
+                        <Font name="SansSerif Bold" size="16.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="btnClearModel" layoutX="140.0" layoutY="662.0" onAction="#clear" prefHeight="40.0" prefWidth="104.0" style="-fx-background-color: #3a434b;" text="Clear" textFill="#c3c6ce">
+                     <font>
+                        <Font name="SansSerif Bold" size="16.0" />
+                     </font></JFXButton>
+                  <TableView fx:id="tblvModel" layoutX="386.0" layoutY="14.0" prefHeight="757.0" prefWidth="1203.0">
+                    <columns>
+                      <TableColumn fx:id="tblcModel" editable="false" prefWidth="383.0" text="Model Name" />
+                      <TableColumn fx:id="tblcCategory" editable="false" minWidth="7.0" prefWidth="171.0" text="Category" />
+                        <TableColumn fx:id="tblcSupplier" editable="false" prefWidth="166.0" text="Supplier" />
+                        <TableColumn fx:id="tblcUnitPrice" editable="false" prefWidth="133.0" text="Unit Price" />
+                        <TableColumn fx:id="tblcSellingPrice" editable="false" prefWidth="136.0" text="Selling Price" />
+                        <TableColumn fx:id="tblcQuantity" editable="false" prefWidth="116.0" text="Quantity" />
+                        <TableColumn fx:id="tblcWarranty" editable="false" prefWidth="96.0" text="Warranty" />
+                    </columns>
+                  </TableView>
+                  <JFXButton fx:id="btnDeleteModel" layoutX="270.0" layoutY="662.0" onAction="#modelDelete" prefHeight="40.0" prefWidth="104.0" style="-fx-background-color: #FF0000;" text="Delete" textFill="WHITE">
+                     <font>
+                        <Font name="SansSerif Bold" size="16.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="btnUpdateModel" layoutX="270.0" layoutY="607.0" onAction="#modelUpdate" prefHeight="40.0" prefWidth="104.0" style="-fx-background-color: #3a434b;" text="Update" textFill="#c3c6ce">
+                     <font>
+                        <Font name="SansSerif Bold" size="16.0" />
+                     </font></JFXButton>
+                  <TextField fx:id="txtbAddNewCategory" alignment="TOP_LEFT" layoutX="386.0" layoutY="795.0" prefHeight="31.0" prefWidth="273.0" promptText="Add New Category" />
+                  <JFXButton fx:id="btnAddCategory" layoutX="708.0" layoutY="795.0" onAction="#categoryAdd" prefHeight="32.0" prefWidth="151.0" style="-fx-background-color: #3a434b;" text="+Add Category" textFill="#c3c6ce">
+                     <font>
+                        <Font name="SansSerif Bold" size="16.0" />
+                     </font></JFXButton>
+                  <TextField fx:id="txtbDeleteCategory" layoutX="1123.0" layoutY="795.0" prefHeight="31.0" prefWidth="273.0" promptText="Delete Category" />
+                  <JFXButton fx:id="btnDeleteCategory" layoutX="1407.0" layoutY="795.0" onAction="#categoryDelete" style="-fx-background-color: #FF0000;" text="Delete category" textFill="WHITE">
+                     <font>
+                        <Font name="SansSerif Bold" size="16.0" />
+                     </font></JFXButton>
+                  <Button fx:id="btnGetSupplierList" layoutX="140.0" layoutY="99.0" mnemonicParsing="false" onAction="#getSupplierList" style="-fx-background-color: #FF0000;" text="Get Supplier List" textFill="WHITE">
+                     <font>
+                        <Font name="SansSerif Bold" size="14.0" />
+                     </font></Button>
+                  <JFXComboBox fx:id="cmbWarranty" layoutX="141.0" layoutY="530.0" prefHeight="31.0" prefWidth="180.0" promptText="Select" />
+                  <Button layoutX="44.0" layoutY="796.0" mnemonicParsing="false" onAction="#demo" style="-fx-background-color: #3a434b;" text="Demo Values" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+               </children></AnchorPane>
+            <AnchorPane layoutY="40.0" prefHeight="70.0" prefWidth="1620.0" style="-fx-background-color: #d8dce0;">
+               <children>
+                  <Button fx:id="btnTabManageModel_Models" alignment="BOTTOM_CENTER" layoutX="640.0" layoutY="-1.0" mnemonicParsing="false" onAction="#inventoryManageScreen" prefHeight="70.0" prefWidth="180.0" style="-fx-background-color: #f56c2d;" text="Manage Model" textFill="#141b20">
+                     <font>
+                        <Font name="SansSerif Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnTabManageItems_Models" alignment="BOTTOM_CENTER" layoutX="820.0" layoutY="-1.0" mnemonicParsing="false" onAction="#inventoryManageItemScreen" prefHeight="70.0" prefWidth="180.0" text="Manage Items" textFill="#141b20">
+                     <font>
+                        <Font name="SansSerif Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnTabReports_Models" alignment="BOTTOM_CENTER" layoutX="1357.0" layoutY="1.0" mnemonicParsing="false" onAction="#inventoryReportsScreen" prefHeight="70.0" prefWidth="180.0" text="Inventory Reports" textFill="#141b20">
+                     <font>
+                        <Font name="SansSerif Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="46.0" layoutY="26.0" text="Logged In As :  " textFill="#141b20">
+                     <font>
+                        <Font name="SansSerif Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="userLabel" layoutX="172.0" layoutY="24.0" text="xxx" textFill="#f80c00">
+                     <font>
+                        <Font name="SansSerif Regular" size="16.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnTabNotifications_Models" alignment="BOTTOM_CENTER" layoutX="1177.0" layoutY="1.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="180.0" text="Notifications" textFill="#141b20">
+                     <font>
+                        <Font name="SansSerif Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnTabOrderRequests_Models" alignment="BOTTOM_CENTER" layoutX="1000.0" layoutY="-1.0" mnemonicParsing="false" onAction="#inventoryOrderRequestsScreen" prefHeight="70.0" prefWidth="180.0" text="Order Requests" textFill="#141b20">
+                     <font>
+                        <Font name="SansSerif Bold" size="18.0" />
+                     </font>
+                  </Button>
+               </children></AnchorPane>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f56c2d" height="5.0" layoutX="638.0" layoutY="108.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="900.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="40.0" prefWidth="1920.0" style="-fx-background-color: #141b20;">
+         <children>
+            <Button fx:id="closeButton" layoutX="1872.0" layoutY="14.0" mnemonicParsing="false" onAction="#ExitWindow" text="X" textFill="#c3c6ce">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="minButton" layoutX="1823.0" layoutY="14.0" mnemonicParsing="false" onAction="#MinimizeWindow" prefHeight="25.0" prefWidth="26.0" text="―" textFill="#c3c6ce">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="25.0" fitWidth="43.0" layoutX="800.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@miniLogo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="859.0" layoutY="14.0" prefHeight="20.0" prefWidth="503.0" text="Crown Investments (Pvt) Ltd - Showroom Management System  " textFill="#c3c6ce">
+               <font>
+                  <Font name="SansSerif Bold" size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="logOutButton" layoutX="1719.0" layoutY="14.0" mnemonicParsing="false" onAction="#MinimizeWindow" prefHeight="25.0" prefWidth="80.0" text="Log Out" textFill="#c3c6ce">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="40.0" prefHeight="1000.0" prefWidth="300.0" style="-fx-background-color: #1e262c;">
+         <children>
+            <Button fx:id="supplierButton" alignment="BASELINE_LEFT" layoutY="200.0" mnemonicParsing="false" onAction="#supplierManageScreen" prefHeight="80.0" prefWidth="300.0" text="               Supplier" textFill="#c3c6ce">
+               <font>
+                  <Font name="SansSerif Bold" size="22.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="60.0" fitWidth="228.0" layoutX="32.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@smallLogo.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="inventoryButton" alignment="BASELINE_LEFT" layoutY="280.0" mnemonicParsing="false" onAction="#inventoryManageScreen" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #4b5259;" text="               Inventory" textFill="#c3c6ce">
+               <font>
+                  <Font name="SansSerif Bold" size="22.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="32.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@1.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="32.0" layoutY="290.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@2.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="customerOrderButton" alignment="BASELINE_LEFT" layoutY="360.0" mnemonicParsing="false" onAction="#customerOrderCartScreen" prefHeight="80.0" prefWidth="300.0" text="               Customer Order" textFill="#c3c6ce">
+               <font>
+                  <Font name="SansSerif Bold" size="22.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="32.0" layoutY="370.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@cart.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="homeButton" alignment="BASELINE_LEFT" layoutY="120.0" mnemonicParsing="false" onAction="#homeScreen" prefHeight="80.0" prefWidth="300.0" text="               Home" textFill="#c3c6ce">
+               <font>
+                  <Font name="SansSerif Bold" size="22.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="32.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@home.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="customerButton" alignment="BASELINE_LEFT" layoutY="440.0" mnemonicParsing="false" onAction="#customerManageScreen" prefHeight="80.0" prefWidth="300.0" text="               Customer" textFill="#c3c6ce">
+               <font>
+                  <Font name="SansSerif Bold" size="22.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="32.0" layoutY="450.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@customer.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="employeeButton" alignment="BASELINE_LEFT" layoutY="520.0" mnemonicParsing="false" onAction="#employeeManageScreen" prefHeight="80.0" prefWidth="300.0" text="               Employee" textFill="#c3c6ce">
+               <font>
+                  <Font name="SansSerif Bold" size="22.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="32.0" layoutY="530.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@employee.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="financeButton" alignment="BASELINE_LEFT" layoutY="600.0" mnemonicParsing="false" onAction="#financeManageScreen" prefHeight="80.0" prefWidth="300.0" text="               Finance" textFill="#c3c6ce">
+               <font>
+                  <Font name="SansSerif Bold" size="22.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="32.0" layoutY="610.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@finance.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="itemRepairButton" alignment="BASELINE_LEFT" layoutY="680.0" mnemonicParsing="false" onAction="#itemRepairManageScreen" prefHeight="80.0" prefWidth="300.0" text="               Item Repair" textFill="#c3c6ce">
+               <font>
+                  <Font name="SansSerif Bold" size="22.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="32.0" layoutY="690.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@repair.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="deliveryButton" alignment="BASELINE_LEFT" layoutY="760.0" mnemonicParsing="false" onAction="#deliveryManageScreen" prefHeight="80.0" prefWidth="300.0" text="               Delivery" textFill="#c3c6ce">
+               <font>
+                  <Font name="SansSerif Bold" size="22.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="32.0" layoutY="770.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@delivery.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="userButton" alignment="BASELINE_LEFT" layoutY="840.0" mnemonicParsing="false" onAction="#userManageScreen" prefHeight="80.0" prefWidth="300.0" text="               User" textFill="#c3c6ce">
+               <font>
+                  <Font name="SansSerif Bold" size="22.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="32.0" layoutY="850.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@user.png" />
+               </image>
+            </ImageView>
+            <Separator layoutY="116.0" prefHeight="4.0" prefWidth="300.0" />
+            <Separator layoutY="918.0" prefHeight="4.0" prefWidth="300.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f56c2d" height="80.0" layoutY="280.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="5.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="1040.0" prefHeight="40.0" prefWidth="1920.0" style="-fx-background-color: #141b20;" />
+   </children>
+</AnchorPane>

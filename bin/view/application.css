@@ -1,0 +1,172 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+/*
+ * #signUp{
+	-fx-background-color : #f56c2d;
+	-fx-font-weight:  bold;
+	-fx-border-radious: 10;
+	-fx-text-fill: white;
+	-fx-font-size : 15px;
+
+} 
+ */
+
+#supplierButton{
+	 -fx-background-color :#1e262c
+}
+
+#supplierButton:hover{
+	
+	-fx-background-color : #3a434b;
+}
+
+#inventoryButton{
+	 -fx-background-color :#1e262c
+}
+
+#inventoryButton:hover{
+	-fx-background-color : #3a434b;
+}
+
+#homeButton{
+	-fx-background-color :#1e262c
+}
+
+#homeButton:hover{
+	-fx-background-color : #3a434b;
+}
+
+#customerOrderButton{
+	-fx-background-color :#1e262c
+}
+
+#customerOrderButton:hover{
+	-fx-background-color : #3a434b;
+}
+
+#customerButton{
+	-fx-background-color :#1e262c
+}
+
+#customerButton:hover{
+	-fx-background-color : #3a434b;
+}
+
+#employeeButton{
+	-fx-background-color :#1e262c
+}
+
+#employeeButton:hover{
+	-fx-background-color : #3a434b;
+}
+
+#financeButton{
+	-fx-background-color :#1e262c
+}
+
+#financeButton:hover{
+	-fx-background-color : #3a434b;
+}
+
+#itemRepairButton{
+	-fx-background-color :#1e262c
+}
+
+#itemRepairButton:hover{
+	-fx-background-color : #3a434b;
+}
+
+#deliveryButton{
+	-fx-background-color :#1e262c
+}
+
+#deliveryButton:hover{
+	-fx-background-color : #3a434b;
+}
+
+#userButton{
+	-fx-background-color :#1e262c
+}
+
+#userButton:hover{
+	-fx-background-color : #3a434b;
+}
+
+/* window bar */
+#closeButton{
+	 -fx-background-color :#141b20
+}
+
+#minButton{
+	 -fx-background-color :#141b20
+}
+
+#minButton:hover{
+	-fx-background-color : #50565d;
+}
+
+#closeButton:hover{
+	
+	-fx-background-color : #50565d;
+}
+
+#logOutButton{
+	-fx-background-color :#141b20;
+}
+
+#logOutButton:hover{
+	-fx-background-color : #f56c2d;
+}
+
+#test{
+	-fx-background-color : red;
+	-fx-font-weight:  bold;
+	-fx-border-radious: 10;
+	-fx-text-fill: white;
+	-fx-font-size : 15px;
+}
+
+#test:hover{
+	-fx-background-color : #f56c2d;
+	-fx-font-weight:  bold;
+	-fx-border-radious: 10;
+	-fx-text-fill: white;
+	-fx-font-size : 15px;
+}
+
+/*Sub navigation */
+#cartButton{
+	-fx-background-color : #d8dce0
+}
+
+#cartButton:hover{
+	-fx-background-color : #c3c6ce;
+}
+
+
+#customerOrdersButton{
+	-fx-background-color : #d8dce0;
+}
+
+#customerOrdersButton:hover{
+	-fx-background-color : #c3c6ce;
+}
+
+#customerOrderReportButton{
+	-fx-background-color : #d8dce0;
+}
+
+#customerOrderReportButton:hover{
+	-fx-background-color : #c3c6ce;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #c3c6ce;
+    -fx-font-weight: bold;
+    -fx-font-size : 15px;
+    -fx-background-color : #1e262c;
+}
+
+.table-view{
+	-fx-font-size : 13px;
+}

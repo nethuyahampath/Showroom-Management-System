@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SupplierPaymentController">
+   <children>
+      <AnchorPane layoutX="313.0" layoutY="-7.0" prefHeight="1080.0" prefWidth="1620.0" style="-fx-background-color: #edf1f2;">
+         <children>
+            <Pane prefHeight="100.0" prefWidth="1066.0" />
+            <AnchorPane layoutY="40.0" prefHeight="70.0" prefWidth="1620.0" style="-fx-background-color: #d8dce0;">
+               <children>
+                  <Button fx:id="manageBtn" alignment="BOTTOM_CENTER" layoutX="846.0" mnemonicParsing="false" onAction="#supplierManageScreen" prefHeight="70.0" prefWidth="180.0" text="Manage" textFill="#141b20">
+                     <font>
+                        <Font name="SansSerif Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="supplierOrder" alignment="BOTTOM_CENTER" layoutX="1026.0" mnemonicParsing="false" onAction="#supplierOrderScreen" prefHeight="70.0" prefWidth="180.0" text="Supplier Order" textFill="#141b20">
+                     <font>
+                        <Font name="SansSerif Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="BOTTOM_CENTER" layoutX="1206.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="180.0" style="-fx-background-color: #f56c2d;" text="Supplier Payment" textFill="#141b20">
+                     <font>
+                        <Font name="SansSerif Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="46.0" layoutY="26.0" text="Logged In As :  " textFill="#141b20">
+                     <font>
+                        <Font name="SansSerif Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="userLabel" layoutX="172.0" layoutY="24.0" text="xxx" textFill="#f80c00">
+                     <font>
+                        <Font name="SansSerif Regular" size="16.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="supplierRep" alignment="BOTTOM_CENTER" layoutX="1386.0" layoutY="1.0" mnemonicParsing="false" onAction="#supplierReport" prefHeight="70.0" prefWidth="180.0" text="Supplier Report" textFill="#141b20">
+                     <font>
+                        <Font name="SansSerif Bold" size="18.0" />
+                     </font>
+                  </Button>
+               </children></AnchorPane>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f56c2d" height="5.0" layoutX="638.0" layoutY="108.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="900.0" />
+            <Text fx:id="ID" layoutX="107.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment ID" />
+            <Text fx:id="orderID" layoutX="115.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order ID" />
+            <Text fx:id="type" layoutX="98.0" layoutY="427.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment type" />
+            <Text fx:id="quantity" layoutX="100.0" layoutY="491.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item quantity" />
+            <Text fx:id="time" layoutX="99.0" layoutY="556.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment date" />
+            <Text fx:id="country" layoutX="97.0" layoutY="623.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment time" />
+            <TextField fx:id="txtPaymentID" layoutX="242.0" layoutY="272.0" prefHeight="40.0" prefWidth="249.0" promptText="Payment ID" />
+            <TextField fx:id="txtOrderID" layoutX="242.0" layoutY="335.0" prefHeight="40.0" prefWidth="249.0" promptText="Order ID" />
+            <TextField fx:id="txtquantity" layoutX="242.0" layoutY="466.0" prefHeight="40.0" prefWidth="249.0" promptText="Item quantity" />
+            <TextField fx:id="txttime" layoutX="242.0" layoutY="598.0" prefHeight="40.0" prefWidth="249.0" promptText="Payment time" />
+            <Button fx:id="insertBtn" layoutX="127.0" layoutY="754.0" mnemonicParsing="false" onAction="#AddNewPayment" prefHeight="53.0" prefWidth="105.0" style="-fx-background-color: #454545;" text="add" textFill="SNOW">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="updateBtn" layoutX="367.0" layoutY="754.0" mnemonicParsing="false" onAction="#UpdateData" prefHeight="53.0" prefWidth="105.0" style="-fx-background-color: #454545;" text="update" textFill="SNOW" />
+            <Button fx:id="deleteBtn" layoutX="367.0" layoutY="836.0" mnemonicParsing="false" onAction="#deleteData" prefHeight="53.0" prefWidth="105.0" style="-fx-background-color: red;" text="Delete">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font></Button>
+            <TableView fx:id="paymenttable" layoutX="526.0" layoutY="147.0" onMouseClicked="#ShowOnClick" prefHeight="794.0" prefWidth="1044.0">
+              <columns>
+                <TableColumn fx:id="payIDcol" prefWidth="112.0" text="Payment ID" />
+                <TableColumn fx:id="orderIDcol" prefWidth="143.0" text="Order ID" />
+                  <TableColumn fx:id="typecol" prefWidth="149.0" text="Payment type" />
+                  <TableColumn fx:id="quantitycol" prefWidth="164.0" text="Item quantity" />
+                  <TableColumn fx:id="datecol" prefWidth="145.0" text="Payment date" />
+                  <TableColumn fx:id="timecol" prefWidth="167.0" text="Payment time" />
+                  <TableColumn fx:id="amountcol" prefWidth="162.0" text="Payment amount" />
+              </columns>
+            </TableView>
+            <TextField fx:id="delpayID" layoutX="87.0" layoutY="843.0" prefHeight="40.0" prefWidth="249.0" promptText="delete Payment details" />
+            <Text fx:id="amount" layoutX="87.0" layoutY="687.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Amount" />
+            <TextField fx:id="txtamount" layoutX="242.0" layoutY="662.0" prefHeight="40.0" prefWidth="249.0" promptText="Payment amount" />
+            <Text layoutX="99.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier Payment Details">
+               <font>
+                  <Font name="System Bold" size="31.0" />
+               </font>
+            </Text>
+            <ComboBox fx:id="txttype" layoutX="243.0" layoutY="402.0" prefHeight="40.0" prefWidth="249.0" promptText="payment type" />
+            <DatePicker fx:id="txtdate" layoutX="242.0" layoutY="531.0" prefHeight="40.0" prefWidth="249.0" promptText="Date" showWeekNumbers="true" />
+            <TextField fx:id="payID" layoutX="109.0" layoutY="147.0" onKeyReleased="#searchSupplierPayment" prefHeight="40.0" prefWidth="376.0" promptText="Search Payment ID" />
+            <Separator layoutX="37.0" layoutY="915.0" prefHeight="5.0" prefWidth="461.0" />
+            <Button layoutX="250.0" layoutY="941.0" mnemonicParsing="false" onAction="#demo" prefHeight="53.0" prefWidth="105.0" text="DEMO" textFill="#a85d5d">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="40.0" prefWidth="1920.0" style="-fx-background-color: #141b20;">
+         <children>
+            <Button fx:id="closeButton" layoutX="1872.0" layoutY="14.0" mnemonicParsing="false" onAction="#ExitWindow" text="X" textFill="#c3c6ce">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="minButton" layoutX="1823.0" layoutY="14.0" mnemonicParsing="false" onAction="#MinimizeWindow" prefHeight="25.0" prefWidth="26.0" text="―" textFill="#c3c6ce">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="25.0" fitWidth="43.0" layoutX="800.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@miniLogo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="859.0" layoutY="14.0" prefHeight="20.0" prefWidth="503.0" text="Crown Investments (Pvt) Ltd - Showroom Management System  " textFill="#c3c6ce">
+               <font>
+                  <Font name="SansSerif Bold" size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="logOutButton" layoutX="1719.0" layoutY="14.0" mnemonicParsing="false" onAction="#MinimizeWindow" prefHeight="25.0" prefWidth="80.0" text="Log Out" textFill="#c3c6ce">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="40.0" prefHeight="1000.0" prefWidth="300.0" style="-fx-background-color: #1e262c;">
+         <children>
+            <Button fx:id="supplierButton" alignment="BASELINE_LEFT" layoutY="200.0" mnemonicParsing="false" onAction="#supplierManageScreen" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #4b5259;" text="               Supplier" textFill="#c3c6ce">
+               <font>
+                  <Font name="SansSerif Bold" size="22.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="60.0" fitWidth="228.0" layoutX="32.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@smallLogo.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="inventoryButton" alignment="BASELINE_LEFT" layoutY="280.0" mnemonicParsing="false" onAction="#inventoryManageScreen" prefHeight="80.0" prefWidth="300.0" text="               Inventory" textFill="#c3c6ce">
+               <font>
+                  <Font name="SansSerif Bold" size="22.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="32.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@1.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="32.0" layoutY="290.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@2.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="customerOrderButton" alignment="BASELINE_LEFT" layoutY="360.0" mnemonicParsing="false" onAction="#customerOrderCartScreen" prefHeight="80.0" prefWidth="300.0" text="               Customer Order" textFill="#c3c6ce">
+               <font>
+                  <Font name="SansSerif Bold" size="22.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="32.0" layoutY="370.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@cart.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="homeButton" alignment="BASELINE_LEFT" layoutY="120.0" mnemonicParsing="false" onAction="#homeScreen" prefHeight="80.0" prefWidth="300.0" text="               Home" textFill="#c3c6ce">
+               <font>
+                  <Font name="SansSerif Bold" size="22.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="32.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@home.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="customerButton" alignment="BASELINE_LEFT" layoutY="440.0" mnemonicParsing="false" onAction="#customerManageScreen" prefHeight="80.0" prefWidth="300.0" text="               Customer" textFill="#c3c6ce">
+               <font>
+                  <Font name="SansSerif Bold" size="22.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="32.0" layoutY="450.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@customer.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="employeeButton" alignment="BASELINE_LEFT" layoutY="520.0" mnemonicParsing="false" onAction="#employeeManageScreen" prefHeight="80.0" prefWidth="300.0" text="               Employee" textFill="#c3c6ce">
+               <font>
+                  <Font name="SansSerif Bold" size="22.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="32.0" layoutY="530.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@employee.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="financeButton" alignment="BASELINE_LEFT" layoutY="600.0" mnemonicParsing="false" onAction="#financeManageScreen" prefHeight="80.0" prefWidth="300.0" text="               Finance" textFill="#c3c6ce">
+               <font>
+                  <Font name="SansSerif Bold" size="22.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="32.0" layoutY="610.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@finance.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="itemRepairButton" alignment="BASELINE_LEFT" layoutY="680.0" mnemonicParsing="false" onAction="#itemRepairManageScreen" prefHeight="80.0" prefWidth="300.0" text="               Item Repair" textFill="#c3c6ce">
+               <font>
+                  <Font name="SansSerif Bold" size="22.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="32.0" layoutY="690.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@repair.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="deliveryButton" alignment="BASELINE_LEFT" layoutY="760.0" mnemonicParsing="false" onAction="#deliveryManageScreen" prefHeight="80.0" prefWidth="300.0" text="               Delivery" textFill="#c3c6ce">
+               <font>
+                  <Font name="SansSerif Bold" size="22.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="32.0" layoutY="770.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@delivery.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="userButton" alignment="BASELINE_LEFT" layoutY="840.0" mnemonicParsing="false" onAction="#userManageScreen" prefHeight="80.0" prefWidth="300.0" text="               User" textFill="#c3c6ce">
+               <font>
+                  <Font name="SansSerif Bold" size="22.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="32.0" layoutY="850.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@user.png" />
+               </image>
+            </ImageView>
+            <Separator layoutY="116.0" prefHeight="4.0" prefWidth="300.0" />
+            <Separator layoutY="918.0" prefHeight="4.0" prefWidth="300.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f56c2d" height="80.0" layoutY="200.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="5.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="1040.0" prefHeight="40.0" prefWidth="1920.0" style="-fx-background-color: #141b20;" />
+   </children>
+</AnchorPane>
